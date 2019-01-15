@@ -1,0 +1,19 @@
+<h1>New User</h1>
+<!-- <form method="post" action="/users">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<p>Username: <input type="text" name="user[username]"></p>
+	<p>Email: <input type="text" name="user[email]"></p>
+	<p>Password: <input type="password" name="user[password]"></p>
+	<p><input type="submit" value="Submit"></p>
+</form> -->
+
+
+<%= form_for @user do |f| %>
+	<%= f.label :username, "User Name" %>
+	<%= f.text_field :username, :value => "bob" %>
+	<%= f.label :email, "Email Address" %>
+	<%= f.text_field :email, placeholder: "i.e. bob@gmail.com" %>
+	<%= f.label :password %>
+	<%= f.password_field :password, placeholder: "Must be 6 characters" %>
+	<%= f.submit %>
+<% end %>
